@@ -1,0 +1,199 @@
+@function opposite-position($direction) {
+  @if $direction == 'top' {
+    @return 'bottom'
+  }
+  @if $direction == 'bottom' {
+    @return 'top'
+  }
+  @if $direction == 'right' {
+    @return 'left'
+  }
+  @if $direction == 'left' {
+    @return 'right'
+  }
+}
+
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color
+/// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
+
+  $perpendicular-borders: $size solid transparent;
+
+  @if $direction == top or $direction == bottom {
+    border-left: $perpendicular-borders;
+    border-right: $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top: $perpendicular-borders;
+  }
+
+}
+
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+@mixin position($top: null, $right: null, $bottom: null, $left: null) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  40%{
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+$triangle-white: #fff;
+$triangle-lg: 50px;
+$triangle-md: 37px;
+$triangle-sm: 28px;
+$triangle-xs: 16px;
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#svg-city {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.triangles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  &__container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.tr {
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  position: absolute;
+
+  animation: fading 7s infinite linear;
+
+  &_w {
+    color: $triangle-white;
+  }
+
+  &_left {
+    &_lg {
+      @include triangle(left, null, $triangle-lg)
+    }
+
+    &_md {
+      @include triangle(left, null, $triangle-md)
+    }
+
+    &_sm {
+      @include triangle(left, null, $triangle-sm)
+    }
+
+    &_xs {
+      @include triangle(left, null, $triangle-xs)
+    }
+  }
+
+  &_right {
+    &_lg {
+      @include triangle(right, null, $triangle-lg)
+    }
+
+    &_md {
+      @include triangle(right, null, $triangle-md)
+    }
+
+    &_sm {
+      @include triangle(right, null, $triangle-sm)
+    }
+
+    &_xs {
+      @include triangle(right, null, $triangle-xs)
+    }
+  }
+}
+
+#tr1 {
+  @include position(150px, 0);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr2 {
+  @include position(283px, 45px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr3 {
+  @include position(287px, 200px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr4 {
+  @include position(150px, 260px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr5 {
+  @include position(30px, 20px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr6 {
+  @include position(25px, 170px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr7 {
+  @include position(150px, 440px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr8 {
+  @include position(280px, 560px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr9 {
+  @include position(150px, 700px);
+  animation-duration: random(5) + 5 + s;
+}
+
+#tr10 {
+  @include position(150px, 820px);
+  animation-duration: random(5) + 5 + s;
+}

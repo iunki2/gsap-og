@@ -1,0 +1,123 @@
+@keyframes fading {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  40% {
+    opacity: 0.1; }
+  50% {
+    opacity: 1; }
+  60% {
+    opacity: 0.9; }
+  100% {
+    opacity: 0; } }
+body {
+  margin: 0;
+  padding: 0; }
+
+#svg-city {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.triangles {
+  position: absolute;
+  width: 100%;
+  height: 100vh; }
+  .triangles__container {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+
+.tr {
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  position: absolute;
+  animation: fading 7s infinite linear; }
+  .tr_w {
+    color: #fff; }
+  .tr_left_lg {
+    border-right: 75px solid;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid transparent; }
+  .tr_left_md {
+    border-right: 55.5px solid;
+    border-bottom: 37px solid transparent;
+    border-top: 37px solid transparent; }
+  .tr_left_sm {
+    border-right: 42px solid;
+    border-bottom: 28px solid transparent;
+    border-top: 28px solid transparent; }
+  .tr_left_xs {
+    border-right: 24px solid;
+    border-bottom: 16px solid transparent;
+    border-top: 16px solid transparent; }
+  .tr_right_lg {
+    border-left: 75px solid;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid transparent; }
+  .tr_right_md {
+    border-left: 55.5px solid;
+    border-bottom: 37px solid transparent;
+    border-top: 37px solid transparent; }
+  .tr_right_sm {
+    border-left: 42px solid;
+    border-bottom: 28px solid transparent;
+    border-top: 28px solid transparent; }
+  .tr_right_xs {
+    border-left: 24px solid;
+    border-bottom: 16px solid transparent;
+    border-top: 16px solid transparent; }
+
+#tr1 {
+  top: 150px;
+  right: 0;
+  animation-duration: 8s; }
+
+#tr2 {
+  top: 283px;
+  right: 45px;
+  animation-duration: 8s; }
+
+#tr3 {
+  top: 287px;
+  right: 200px;
+  animation-duration: 9s; }
+
+#tr4 {
+  top: 150px;
+  right: 260px;
+  animation-duration: 8s; }
+
+#tr5 {
+  top: 30px;
+  right: 20px;
+  animation-duration: 10s; }
+
+#tr6 {
+  top: 25px;
+  right: 170px;
+  animation-duration: 8s; }
+
+#tr7 {
+  top: 150px;
+  right: 440px;
+  animation-duration: 9s; }
+
+#tr8 {
+  top: 280px;
+  right: 560px;
+  animation-duration: 9s; }
+
+#tr9 {
+  top: 150px;
+  right: 700px;
+  animation-duration: 10s; }
+
+#tr10 {
+  top: 150px;
+  right: 820px;
+  animation-duration: 9s; }
+
+/*# sourceMappingURL=main.css.map */
