@@ -22,7 +22,7 @@ function initMorph () {
       morphSVG: ' M 274 -121 C 160.606 -56.061 161.25 80 180 196 C 198.75 312 369 511.5 516 615 C 530.654 625.317 655.21 702.845 750.4 732.1 C 845.59 761.355 975.667 769.455 1091 742 C 1206.333 714.545 1276.667 40.788 1105 -71 C 933.333 -182.788 387.394 -185.939 274 -121 Z ',
       ease: Power4.easeOut,
       onComplete: handleMorph,
-    }).duration(2.0001)
+    }).duration(initAnimationDuration)
 
   tlCity.to(maskCityPath,
     1,
@@ -37,7 +37,7 @@ function initMorph () {
     {
       morphSVG: ' M 129 -47 Q -133.75 407 -115 523 C -96.25 639 -82 811.5 65 915 C 79.654 925.317 180.582 996.909 412 1050 Q 643.418 1103.091 1176 935 L 1155 -117 L 129 -47 Z ',
       ease: Power4.easeOut,
-    }).duration(2.0001)
+    }).duration(initAnimationDuration)
 }
 
 function handleMorph () {
@@ -90,6 +90,7 @@ function handleMouseMorph () {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // svg.style
   init()
 })
 

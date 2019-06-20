@@ -35,17 +35,26 @@
 
 }
 
-/// Shorthand mixin for offset positioning
-/// @param {String} $position - Either `relative`, `absolute` or `fixed`
-/// @param {Length} $top [null] - Top offset
-/// @param {Length} $right [null] - Right offset
-/// @param {Length} $bottom [null] - Bottom offset
-/// @param {Length} $left [null] - Left offset
-@mixin position($top: null, $right: null, $bottom: null, $left: null) {
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+@function get-vw($target) {
+  $vw-context: (1853*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+/// Shorthand mixin for offset positioning from pixels to vw
+@mixin position($position) {
+  @warn $position;
+  @if (length($position) > 0 and nth($position, 1) != null) {
+    top: get-vw(nth($position, 1));
+  }
+  @if (length($position) > 1 and nth($position, 2) != null) {
+    right: get-vw(nth($position, 2));
+  }
+  @if (length($position) > 2 and nth($position, 3) != null) {
+    bottom: get-vw(nth($position, 3));
+  }
+  @if (length($position) > 3 and nth($position, 4) != null) {
+    left: get-vw(nth($position, 4));
+  }
 }
 
 @keyframes fading {
@@ -53,7 +62,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
-  40%{
+  40% {
     opacity: 0.1;
   }
   50% {
@@ -67,12 +76,14 @@
   }
 }
 
-$triangle-white: #fff;
-$triangle-lg: 50px;
-$triangle-md: 37px;
-$triangle-sm: 28px;
-$triangle-xs: 16px;
+$triangle-lg: 30px;
+$triangle-md: 20px;
+$triangle-sm: 10px;
+$triangle-xs: 7px;
 
+$primary-color: #12a4d5;
+$secondary-color: #18cda6;
+$white: #fff;
 
 body {
   margin: 0;
@@ -83,13 +94,14 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
 }
-
 
 .triangles {
   position: absolute;
   width: 100%;
   height: 100vh;
+  z-index: 2;
 
   &__container {
     position: relative;
@@ -105,41 +117,51 @@ body {
   z-index: 2;
   position: absolute;
 
-  animation: fading 7s infinite linear;
+  //animation: fading 7s infinite linear;
 
   &_w {
-    color: $triangle-white;
+    color: $white;
+  }
+
+  &_p {
+    color: $primary-color;
+  }
+
+  &_s {
+    color: $secondary-color;
   }
 
   &_left {
+
     &_lg {
-      @include triangle(left, null, $triangle-lg)
+      @include triangle(left, null, get-vw($triangle-lg))
     }
 
     &_md {
-      @include triangle(left, null, $triangle-md)
+      @include triangle(left, null, get-vw($triangle-md))
     }
 
     &_sm {
-      @include triangle(left, null, $triangle-sm)
+      @include triangle(left, null, get-vw($triangle-sm))
     }
 
     &_xs {
-      @include triangle(left, null, $triangle-xs)
+      @include triangle(left, null, get-vw($triangle-xs))
     }
   }
 
   &_right {
+
     &_lg {
-      @include triangle(right, null, $triangle-lg)
+      @include triangle(right, null, get-vw($triangle-lg))
     }
 
     &_md {
-      @include triangle(right, null, $triangle-md)
+      @include triangle(right, null, get-vw($triangle-md))
     }
 
     &_sm {
-      @include triangle(right, null, $triangle-sm)
+      @include triangle(right, null, get-vw($triangle-sm))
     }
 
     &_xs {
@@ -148,52 +170,60 @@ body {
   }
 }
 
-#tr1 {
-  @include position(150px, 0);
-  animation-duration: random(5) + 5 + s;
+$triangles-positions: (
+                (140px, 0px),
+                (253px, 35px),
+                (200px, 190px),
+                (140px, 250px),
+                (20px, 10px),
+                (15px, 160px),
+                (140px, 430px),
+                (250px, 550px),
+                (140px, 670px),
+                (140px, 790px),
+                (770px, 0px),
+                (850px, 40px),
+                (860px, 140px),
+                (740px, 170px),
+                (750px, 300px),
+                (860px, 460px),
+                (760px, 480px),
+                (750px, 580px),
+                (510px, 120px),
+                (510px, 190px),
+                (430px, 120px),
+                (430px, 190px),
+                (350px, 120px),
+                (350px, 190px),
+
+                (130px, null, null, 0px),
+                (180px, null, null, 40px),
+                (180px, null, null, 120px),
+
+                (240px, null, null, 0px),
+                (290px, null, null, 40px),
+                (290px, null, null, 120px),
+
+                (340px, null, null, 0px),
+                (390px, null, null, 40px),
+                (390px, null, null, 120px),
+
+                (440px, null, null, 0px),
+
+                (560px, null, null, 0px),
+                (630px, null, null, 40px),
+                (640px, null, null, 170px),
+                (560px, null, null, 200px),
+                (565px, null, null, 280px),
+);
+
+@mixin triangles-list() {
+  @for $i from 1 through length($triangles-positions) {
+    #tr#{$i} {
+      @include position(nth($triangles-positions, $i));
+      animation-duration: random(5) + 5 + s;
+    }
+  }
 }
 
-#tr2 {
-  @include position(283px, 45px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr3 {
-  @include position(287px, 200px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr4 {
-  @include position(150px, 260px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr5 {
-  @include position(30px, 20px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr6 {
-  @include position(25px, 170px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr7 {
-  @include position(150px, 440px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr8 {
-  @include position(280px, 560px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr9 {
-  @include position(150px, 700px);
-  animation-duration: random(5) + 5 + s;
-}
-
-#tr10 {
-  @include position(150px, 820px);
-  animation-duration: random(5) + 5 + s;
-}
+@include triangles-list

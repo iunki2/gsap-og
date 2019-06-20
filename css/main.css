@@ -17,12 +17,14 @@ body {
 #svg-city {
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  z-index: 1; }
 
 .triangles {
   position: absolute;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  z-index: 2; }
   .triangles__container {
     position: relative;
     height: 100%;
@@ -33,91 +35,239 @@ body {
   height: 0;
   content: '';
   z-index: 2;
-  position: absolute;
-  animation: fading 7s infinite linear; }
+  position: absolute; }
   .tr_w {
     color: #fff; }
+  .tr_p {
+    color: #12a4d5; }
+  .tr_s {
+    color: #18cda6; }
   .tr_left_lg {
-    border-right: 75px solid;
-    border-bottom: 50px solid transparent;
-    border-top: 50px solid transparent; }
+    border-right: 2.42849vw solid;
+    border-bottom: 1.619vw solid transparent;
+    border-top: 1.619vw solid transparent; }
   .tr_left_md {
-    border-right: 55.5px solid;
-    border-bottom: 37px solid transparent;
-    border-top: 37px solid transparent; }
+    border-right: 1.619vw solid;
+    border-bottom: 1.07933vw solid transparent;
+    border-top: 1.07933vw solid transparent; }
   .tr_left_sm {
-    border-right: 42px solid;
-    border-bottom: 28px solid transparent;
-    border-top: 28px solid transparent; }
+    border-right: 0.8095vw solid;
+    border-bottom: 0.53967vw solid transparent;
+    border-top: 0.53967vw solid transparent; }
   .tr_left_xs {
-    border-right: 24px solid;
-    border-bottom: 16px solid transparent;
-    border-top: 16px solid transparent; }
+    border-right: 0.56665vw solid;
+    border-bottom: 0.37777vw solid transparent;
+    border-top: 0.37777vw solid transparent; }
   .tr_right_lg {
-    border-left: 75px solid;
-    border-bottom: 50px solid transparent;
-    border-top: 50px solid transparent; }
+    border-left: 2.42849vw solid;
+    border-bottom: 1.619vw solid transparent;
+    border-top: 1.619vw solid transparent; }
   .tr_right_md {
-    border-left: 55.5px solid;
-    border-bottom: 37px solid transparent;
-    border-top: 37px solid transparent; }
+    border-left: 1.619vw solid;
+    border-bottom: 1.07933vw solid transparent;
+    border-top: 1.07933vw solid transparent; }
   .tr_right_sm {
-    border-left: 42px solid;
-    border-bottom: 28px solid transparent;
-    border-top: 28px solid transparent; }
+    border-left: 0.8095vw solid;
+    border-bottom: 0.53967vw solid transparent;
+    border-top: 0.53967vw solid transparent; }
   .tr_right_xs {
-    border-left: 24px solid;
-    border-bottom: 16px solid transparent;
-    border-top: 16px solid transparent; }
+    border-left: 10.5px solid;
+    border-bottom: 7px solid transparent;
+    border-top: 7px solid transparent; }
 
 #tr1 {
-  top: 150px;
-  right: 0;
-  animation-duration: 8s; }
+  top: 7.55532vw;
+  right: 0vw;
+  animation-duration: 7s; }
 
 #tr2 {
-  top: 283px;
-  right: 45px;
+  top: 13.65353vw;
+  right: 1.88883vw;
   animation-duration: 8s; }
 
 #tr3 {
-  top: 287px;
-  right: 200px;
-  animation-duration: 9s; }
+  top: 10.79331vw;
+  right: 10.25364vw;
+  animation-duration: 6s; }
 
 #tr4 {
-  top: 150px;
-  right: 260px;
-  animation-duration: 8s; }
-
-#tr5 {
-  top: 30px;
-  right: 20px;
+  top: 7.55532vw;
+  right: 13.49164vw;
   animation-duration: 10s; }
 
-#tr6 {
-  top: 25px;
-  right: 170px;
+#tr5 {
+  top: 1.07933vw;
+  right: 0.53967vw;
   animation-duration: 8s; }
 
+#tr6 {
+  top: 0.8095vw;
+  right: 8.63465vw;
+  animation-duration: 6s; }
+
 #tr7 {
-  top: 150px;
-  right: 440px;
-  animation-duration: 9s; }
+  top: 7.55532vw;
+  right: 23.20561vw;
+  animation-duration: 6s; }
 
 #tr8 {
-  top: 280px;
-  right: 560px;
+  top: 13.49164vw;
+  right: 29.6816vw;
   animation-duration: 9s; }
 
 #tr9 {
-  top: 150px;
-  right: 700px;
-  animation-duration: 10s; }
+  top: 7.55532vw;
+  right: 36.15758vw;
+  animation-duration: 6s; }
 
 #tr10 {
-  top: 150px;
-  right: 820px;
+  top: 7.55532vw;
+  right: 42.63357vw;
+  animation-duration: 7s; }
+
+#tr11 {
+  top: 41.55424vw;
+  right: 0vw;
+  animation-duration: 6s; }
+
+#tr12 {
+  top: 45.87156vw;
+  right: 2.15866vw;
+  animation-duration: 8s; }
+
+#tr13 {
+  top: 46.41123vw;
+  right: 7.55532vw;
+  animation-duration: 9s; }
+
+#tr14 {
+  top: 39.93524vw;
+  right: 9.17431vw;
+  animation-duration: 9s; }
+
+#tr15 {
+  top: 40.47491vw;
+  right: 16.18996vw;
+  animation-duration: 8s; }
+
+#tr16 {
+  top: 46.41123vw;
+  right: 24.82461vw;
+  animation-duration: 6s; }
+
+#tr17 {
+  top: 41.01457vw;
+  right: 25.90394vw;
+  animation-duration: 8s; }
+
+#tr18 {
+  top: 40.47491vw;
+  right: 31.30059vw;
+  animation-duration: 7s; }
+
+#tr19 {
+  top: 27.52294vw;
+  right: 6.47598vw;
+  animation-duration: 10s; }
+
+#tr20 {
+  top: 27.52294vw;
+  right: 10.25364vw;
+  animation-duration: 6s; }
+
+#tr21 {
+  top: 23.20561vw;
+  right: 6.47598vw;
+  animation-duration: 7s; }
+
+#tr22 {
+  top: 23.20561vw;
+  right: 10.25364vw;
+  animation-duration: 9s; }
+
+#tr23 {
+  top: 18.88829vw;
+  right: 6.47598vw;
+  animation-duration: 8s; }
+
+#tr24 {
+  top: 18.88829vw;
+  right: 10.25364vw;
+  animation-duration: 10s; }
+
+#tr25 {
+  top: 7.01565vw;
+  left: 0vw;
+  animation-duration: 8s; }
+
+#tr26 {
+  top: 9.71398vw;
+  left: 2.15866vw;
+  animation-duration: 9s; }
+
+#tr27 {
+  top: 9.71398vw;
+  left: 6.47598vw;
+  animation-duration: 10s; }
+
+#tr28 {
+  top: 12.95197vw;
+  left: 0vw;
+  animation-duration: 8s; }
+
+#tr29 {
+  top: 15.6503vw;
+  left: 2.15866vw;
+  animation-duration: 8s; }
+
+#tr30 {
+  top: 15.6503vw;
+  left: 6.47598vw;
+  animation-duration: 6s; }
+
+#tr31 {
+  top: 18.34862vw;
+  left: 0vw;
+  animation-duration: 7s; }
+
+#tr32 {
+  top: 21.04695vw;
+  left: 2.15866vw;
+  animation-duration: 6s; }
+
+#tr33 {
+  top: 21.04695vw;
+  left: 6.47598vw;
+  animation-duration: 10s; }
+
+#tr34 {
+  top: 23.74528vw;
+  left: 0vw;
+  animation-duration: 8s; }
+
+#tr35 {
+  top: 30.22126vw;
+  left: 0vw;
+  animation-duration: 6s; }
+
+#tr36 {
+  top: 33.99892vw;
+  left: 2.15866vw;
+  animation-duration: 9s; }
+
+#tr37 {
+  top: 34.53859vw;
+  left: 9.17431vw;
+  animation-duration: 6s; }
+
+#tr38 {
+  top: 30.22126vw;
+  left: 10.79331vw;
+  animation-duration: 9s; }
+
+#tr39 {
+  top: 30.4911vw;
+  left: 15.11063vw;
   animation-duration: 9s; }
 
 /*# sourceMappingURL=main.css.map */
