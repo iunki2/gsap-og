@@ -1,89 +1,6 @@
-@function opposite-position($direction) {
-  @if $direction == 'top' {
-    @return 'bottom'
-  }
-  @if $direction == 'bottom' {
-    @return 'top'
-  }
-  @if $direction == 'right' {
-    @return 'left'
-  }
-  @if $direction == 'left' {
-    @return 'right'
-  }
-}
-
-/// Triangle helper mixin
-/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
-/// @param {Color} $color [currentcolor] - Triangle color
-/// @param {Length} $size [1em] - Triangle size
-@mixin triangle($direction, $color: currentcolor, $size: 1em) {
-  @if not index(top right bottom left, $direction) {
-    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
-  }
-  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
-
-  $perpendicular-borders: $size solid transparent;
-
-  @if $direction == top or $direction == bottom {
-    border-left: $perpendicular-borders;
-    border-right: $perpendicular-borders;
-  } @else if $direction == right or $direction == left {
-    border-bottom: $perpendicular-borders;
-    border-top: $perpendicular-borders;
-  }
-
-}
-
-@function get-vw($target) {
-  $vw-context: (1853*.01) * 1px;
-  @return ($target/$vw-context) * 1vw;
-}
-
-/// Shorthand mixin for offset positioning from pixels to vw
-@mixin position($position) {
-  @warn $position;
-  @if (length($position) > 0 and nth($position, 1) != null) {
-    top: get-vw(nth($position, 1));
-  }
-  @if (length($position) > 1 and nth($position, 2) != null) {
-    right: get-vw(nth($position, 2));
-  }
-  @if (length($position) > 2 and nth($position, 3) != null) {
-    bottom: get-vw(nth($position, 3));
-  }
-  @if (length($position) > 3 and nth($position, 4) != null) {
-    left: get-vw(nth($position, 4));
-  }
-}
-
-@keyframes fading {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  40% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-$triangle-lg: 30px;
-$triangle-md: 20px;
-$triangle-sm: 10px;
-$triangle-xs: 7px;
-
-$primary-color: #12a4d5;
-$secondary-color: #18cda6;
-$white: #fff;
+@import "mixins";
+@import "keyframes";
+@import "variables";
 
 body {
   margin: 0;
@@ -172,16 +89,17 @@ body {
 }
 
 $triangles-positions: (
+  //right
                 (140px, 0px),
                 (253px, 35px),
-                (200px, 190px),
-                (140px, 250px),
-                (20px, 10px),
-                (15px, 160px),
-                (140px, 430px),
-                (250px, 550px),
-                (140px, 670px),
-                (140px, 790px),
+                (220px, 150px),
+                (130px, 205px),
+                (25px, 10px),
+                (25px, 130px),
+                (140px, 310px),
+                (220px, 435px),
+                (140px, 510px),
+                (140px, 610px),
                 (770px, 0px),
                 (850px, 40px),
                 (860px, 140px),
@@ -196,35 +114,30 @@ $triangles-positions: (
                 (430px, 190px),
                 (350px, 120px),
                 (350px, 190px),
-
+          //left
                 (130px, null, null, 0px),
                 (180px, null, null, 40px),
                 (180px, null, null, 120px),
-
                 (240px, null, null, 0px),
                 (290px, null, null, 40px),
                 (290px, null, null, 120px),
-
                 (340px, null, null, 0px),
                 (390px, null, null, 40px),
                 (390px, null, null, 120px),
-
                 (440px, null, null, 0px),
-
                 (560px, null, null, 0px),
                 (630px, null, null, 40px),
                 (640px, null, null, 170px),
                 (560px, null, null, 200px),
                 (565px, null, null, 280px),
+                (640px, null, null, 430px),
+                (640px, null, null, 350px),
+                (565px, null, null, 550px),
+          //center
+                (140px, null, null, 750px),
+                (140px, null, null, 850px),
+                (220px, null, null, 850px),
+                (220px, null, null, 950px),
 );
 
-@mixin triangles-list() {
-  @for $i from 1 through length($triangles-positions) {
-    #tr#{$i} {
-      @include position(nth($triangles-positions, $i));
-      animation-duration: random(5) + 5 + s;
-    }
-  }
-}
-
-@include triangles-list
+@include triangles-list($triangles-positions)

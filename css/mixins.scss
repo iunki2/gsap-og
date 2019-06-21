@@ -1,0 +1,69 @@
+@function get-vw($target) {
+  $vw-context: (1853*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@function opposite-position($direction) {
+  @if $direction == 'top' {
+    @return 'bottom'
+  }
+  @if $direction == 'bottom' {
+    @return 'top'
+  }
+  @if $direction == 'right' {
+    @return 'left'
+  }
+  @if $direction == 'left' {
+    @return 'right'
+  }
+}
+
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color
+/// @param {Length} $size [1em] - Triangle size
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
+
+  $perpendicular-borders: $size solid transparent;
+
+  @if $direction == top or $direction == bottom {
+    border-left: $perpendicular-borders;
+    border-right: $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top: $perpendicular-borders;
+  }
+
+}
+
+/// Shorthand mixin for offset positioning from pixels to vw
+@mixin position($position) {
+  @warn $position;
+  @if (length($position) > 0 and nth($position, 1) != null) {
+    top: get-vw(nth($position, 1));
+  }
+  @if (length($position) > 1 and nth($position, 2) != null) {
+    right: get-vw(nth($position, 2));
+  }
+  @if (length($position) > 2 and nth($position, 3) != null) {
+    bottom: get-vw(nth($position, 3));
+  }
+  @if (length($position) > 3 and nth($position, 4) != null) {
+    left: get-vw(nth($position, 4));
+  }
+}
+
+// Generate triangles #tr{i} by position
+@mixin triangles-list($triangles-positions) {
+  @for $i from 1 through length($triangles-positions) {
+    #tr#{$i} {
+      @include position(nth($triangles-positions, $i));
+      animation-duration: random(5) + 5 + s;
+    }
+  }
+}
+

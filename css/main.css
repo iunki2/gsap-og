@@ -80,77 +80,77 @@ body {
 #tr1 {
   top: 7.55532vw;
   right: 0vw;
-  animation-duration: 8s; }
+  animation-duration: 6s; }
 
 #tr2 {
   top: 13.65353vw;
   right: 1.88883vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr3 {
-  top: 10.79331vw;
-  right: 10.25364vw;
-  animation-duration: 8s; }
+  top: 11.87264vw;
+  right: 8.09498vw;
+  animation-duration: 7s; }
 
 #tr4 {
-  top: 7.55532vw;
-  right: 13.49164vw;
-  animation-duration: 8s; }
+  top: 7.01565vw;
+  right: 11.06314vw;
+  animation-duration: 7s; }
 
 #tr5 {
-  top: 1.07933vw;
+  top: 1.34916vw;
   right: 0.53967vw;
   animation-duration: 9s; }
 
 #tr6 {
-  top: 0.8095vw;
-  right: 8.63465vw;
-  animation-duration: 6s; }
+  top: 1.34916vw;
+  right: 7.01565vw;
+  animation-duration: 9s; }
 
 #tr7 {
   top: 7.55532vw;
-  right: 23.20561vw;
-  animation-duration: 9s; }
+  right: 16.72963vw;
+  animation-duration: 8s; }
 
 #tr8 {
-  top: 13.49164vw;
-  right: 29.6816vw;
-  animation-duration: 6s; }
+  top: 11.87264vw;
+  right: 23.47545vw;
+  animation-duration: 10s; }
 
 #tr9 {
   top: 7.55532vw;
-  right: 36.15758vw;
-  animation-duration: 9s; }
+  right: 27.52294vw;
+  animation-duration: 10s; }
 
 #tr10 {
   top: 7.55532vw;
-  right: 42.63357vw;
-  animation-duration: 6s; }
+  right: 32.91959vw;
+  animation-duration: 10s; }
 
 #tr11 {
   top: 41.55424vw;
   right: 0vw;
-  animation-duration: 10s; }
+  animation-duration: 6s; }
 
 #tr12 {
   top: 45.87156vw;
   right: 2.15866vw;
-  animation-duration: 8s; }
+  animation-duration: 10s; }
 
 #tr13 {
   top: 46.41123vw;
   right: 7.55532vw;
-  animation-duration: 10s; }
+  animation-duration: 8s; }
 
 #tr14 {
   top: 39.93524vw;
   right: 9.17431vw;
-  animation-duration: 8s; }
+  animation-duration: 7s; }
 
 #tr15 {
   top: 40.47491vw;
   right: 16.18996vw;
-  animation-duration: 9s; }
+  animation-duration: 8s; }
 
 #tr16 {
   top: 46.41123vw;
@@ -160,92 +160,92 @@ body {
 #tr17 {
   top: 41.01457vw;
   right: 25.90394vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr18 {
   top: 40.47491vw;
   right: 31.30059vw;
-  animation-duration: 8s; }
+  animation-duration: 7s; }
 
 #tr19 {
   top: 27.52294vw;
   right: 6.47598vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr20 {
   top: 27.52294vw;
   right: 10.25364vw;
-  animation-duration: 6s; }
+  animation-duration: 7s; }
 
 #tr21 {
   top: 23.20561vw;
   right: 6.47598vw;
-  animation-duration: 9s; }
+  animation-duration: 6s; }
 
 #tr22 {
   top: 23.20561vw;
   right: 10.25364vw;
-  animation-duration: 10s; }
+  animation-duration: 9s; }
 
 #tr23 {
   top: 18.88829vw;
   right: 6.47598vw;
-  animation-duration: 9s; }
+  animation-duration: 8s; }
 
 #tr24 {
   top: 18.88829vw;
   right: 10.25364vw;
-  animation-duration: 10s; }
+  animation-duration: 6s; }
 
 #tr25 {
   top: 7.01565vw;
   left: 0vw;
-  animation-duration: 8s; }
+  animation-duration: 10s; }
 
 #tr26 {
   top: 9.71398vw;
   left: 2.15866vw;
-  animation-duration: 10s; }
+  animation-duration: 8s; }
 
 #tr27 {
   top: 9.71398vw;
   left: 6.47598vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr28 {
   top: 12.95197vw;
   left: 0vw;
-  animation-duration: 7s; }
+  animation-duration: 9s; }
 
 #tr29 {
   top: 15.6503vw;
   left: 2.15866vw;
-  animation-duration: 6s; }
+  animation-duration: 10s; }
 
 #tr30 {
   top: 15.6503vw;
   left: 6.47598vw;
-  animation-duration: 10s; }
+  animation-duration: 7s; }
 
 #tr31 {
   top: 18.34862vw;
   left: 0vw;
-  animation-duration: 7s; }
+  animation-duration: 6s; }
 
 #tr32 {
   top: 21.04695vw;
   left: 2.15866vw;
-  animation-duration: 10s; }
+  animation-duration: 6s; }
 
 #tr33 {
   top: 21.04695vw;
   left: 6.47598vw;
-  animation-duration: 6s; }
+  animation-duration: 8s; }
 
 #tr34 {
   top: 23.74528vw;
   left: 0vw;
-  animation-duration: 7s; }
+  animation-duration: 10s; }
 
 #tr35 {
   top: 30.22126vw;
@@ -255,21 +255,56 @@ body {
 #tr36 {
   top: 33.99892vw;
   left: 2.15866vw;
-  animation-duration: 7s; }
+  animation-duration: 9s; }
 
 #tr37 {
   top: 34.53859vw;
   left: 9.17431vw;
-  animation-duration: 9s; }
+  animation-duration: 8s; }
 
 #tr38 {
   top: 30.22126vw;
   left: 10.79331vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr39 {
   top: 30.4911vw;
   left: 15.11063vw;
+  animation-duration: 10s; }
+
+#tr40 {
+  top: 34.53859vw;
+  left: 23.20561vw;
+  animation-duration: 7s; }
+
+#tr41 {
+  top: 34.53859vw;
+  left: 18.88829vw;
+  animation-duration: 7s; }
+
+#tr42 {
+  top: 30.4911vw;
+  left: 29.6816vw;
+  animation-duration: 7s; }
+
+#tr43 {
+  top: 7.55532vw;
+  left: 40.47491vw;
+  animation-duration: 7s; }
+
+#tr44 {
+  top: 7.55532vw;
+  left: 45.87156vw;
   animation-duration: 8s; }
+
+#tr45 {
+  top: 11.87264vw;
+  left: 45.87156vw;
+  animation-duration: 6s; }
+
+#tr46 {
+  top: 11.87264vw;
+  left: 51.26821vw;
+  animation-duration: 9s; }
 
 /*# sourceMappingURL=main.css.map */
