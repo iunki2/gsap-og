@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function init () {
-  debugger
   initMorph()
   setTimeout(handleMouseMorph, initAnimationDuration * 1000)
 }
