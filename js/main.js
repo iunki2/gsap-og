@@ -54,6 +54,7 @@ function handleMorph () {
 
 function handleMouseMorph () {
   svg.addEventListener('mousemove', function (e) {
+    console.log(123)
     const svgWidth = svg.getBBox().width,
       svgHeight = svg.getBBox().height,
       r = getOffset(svg).left - window.pageXOffset,
@@ -90,13 +91,12 @@ function handleMouseMorph () {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // svg.style
   init()
 })
 
 function init () {
   initMorph()
-  setTimeout(handleMouseMorph, (mainDelay + initAnimationDuration) * 1000)
+  setTimeout(handleMouseMorph, initAnimationDuration * 1000)
 }
 
 function getOffset (element) {

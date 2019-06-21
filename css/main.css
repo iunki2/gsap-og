@@ -24,7 +24,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 2; }
+  z-index: 2;
+  pointer-events: none; }
   .triangles__container {
     position: relative;
     height: 100%;
@@ -35,7 +36,8 @@ body {
   height: 0;
   content: '';
   z-index: 2;
-  position: absolute; }
+  position: absolute;
+  animation: fading 7s infinite linear; }
   .tr_w {
     color: #fff; }
   .tr_p {
@@ -78,27 +80,27 @@ body {
 #tr1 {
   top: 7.55532vw;
   right: 0vw;
-  animation-duration: 7s; }
+  animation-duration: 8s; }
 
 #tr2 {
   top: 13.65353vw;
   right: 1.88883vw;
-  animation-duration: 8s; }
+  animation-duration: 6s; }
 
 #tr3 {
   top: 10.79331vw;
   right: 10.25364vw;
-  animation-duration: 6s; }
+  animation-duration: 8s; }
 
 #tr4 {
   top: 7.55532vw;
   right: 13.49164vw;
-  animation-duration: 10s; }
+  animation-duration: 8s; }
 
 #tr5 {
   top: 1.07933vw;
   right: 0.53967vw;
-  animation-duration: 8s; }
+  animation-duration: 9s; }
 
 #tr6 {
   top: 0.8095vw;
@@ -108,27 +110,27 @@ body {
 #tr7 {
   top: 7.55532vw;
   right: 23.20561vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr8 {
   top: 13.49164vw;
   right: 29.6816vw;
-  animation-duration: 9s; }
+  animation-duration: 6s; }
 
 #tr9 {
   top: 7.55532vw;
   right: 36.15758vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr10 {
   top: 7.55532vw;
   right: 42.63357vw;
-  animation-duration: 7s; }
+  animation-duration: 6s; }
 
 #tr11 {
   top: 41.55424vw;
   right: 0vw;
-  animation-duration: 6s; }
+  animation-duration: 10s; }
 
 #tr12 {
   top: 45.87156vw;
@@ -138,37 +140,37 @@ body {
 #tr13 {
   top: 46.41123vw;
   right: 7.55532vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr14 {
   top: 39.93524vw;
   right: 9.17431vw;
-  animation-duration: 9s; }
+  animation-duration: 8s; }
 
 #tr15 {
   top: 40.47491vw;
   right: 16.18996vw;
-  animation-duration: 8s; }
+  animation-duration: 9s; }
 
 #tr16 {
   top: 46.41123vw;
   right: 24.82461vw;
-  animation-duration: 6s; }
+  animation-duration: 10s; }
 
 #tr17 {
   top: 41.01457vw;
   right: 25.90394vw;
-  animation-duration: 8s; }
+  animation-duration: 9s; }
 
 #tr18 {
   top: 40.47491vw;
   right: 31.30059vw;
-  animation-duration: 7s; }
+  animation-duration: 8s; }
 
 #tr19 {
   top: 27.52294vw;
   right: 6.47598vw;
-  animation-duration: 10s; }
+  animation-duration: 9s; }
 
 #tr20 {
   top: 27.52294vw;
@@ -178,17 +180,17 @@ body {
 #tr21 {
   top: 23.20561vw;
   right: 6.47598vw;
-  animation-duration: 7s; }
+  animation-duration: 9s; }
 
 #tr22 {
   top: 23.20561vw;
   right: 10.25364vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr23 {
   top: 18.88829vw;
   right: 6.47598vw;
-  animation-duration: 8s; }
+  animation-duration: 9s; }
 
 #tr24 {
   top: 18.88829vw;
@@ -203,27 +205,27 @@ body {
 #tr26 {
   top: 9.71398vw;
   left: 2.15866vw;
-  animation-duration: 9s; }
+  animation-duration: 10s; }
 
 #tr27 {
   top: 9.71398vw;
   left: 6.47598vw;
-  animation-duration: 10s; }
+  animation-duration: 6s; }
 
 #tr28 {
   top: 12.95197vw;
   left: 0vw;
-  animation-duration: 8s; }
+  animation-duration: 7s; }
 
 #tr29 {
   top: 15.6503vw;
   left: 2.15866vw;
-  animation-duration: 8s; }
+  animation-duration: 6s; }
 
 #tr30 {
   top: 15.6503vw;
   left: 6.47598vw;
-  animation-duration: 6s; }
+  animation-duration: 10s; }
 
 #tr31 {
   top: 18.34862vw;
@@ -233,32 +235,32 @@ body {
 #tr32 {
   top: 21.04695vw;
   left: 2.15866vw;
-  animation-duration: 6s; }
+  animation-duration: 10s; }
 
 #tr33 {
   top: 21.04695vw;
   left: 6.47598vw;
-  animation-duration: 10s; }
+  animation-duration: 6s; }
 
 #tr34 {
   top: 23.74528vw;
   left: 0vw;
-  animation-duration: 8s; }
+  animation-duration: 7s; }
 
 #tr35 {
   top: 30.22126vw;
   left: 0vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr36 {
   top: 33.99892vw;
   left: 2.15866vw;
-  animation-duration: 9s; }
+  animation-duration: 7s; }
 
 #tr37 {
   top: 34.53859vw;
   left: 9.17431vw;
-  animation-duration: 6s; }
+  animation-duration: 9s; }
 
 #tr38 {
   top: 30.22126vw;
@@ -268,6 +270,6 @@ body {
 #tr39 {
   top: 30.4911vw;
   left: 15.11063vw;
-  animation-duration: 9s; }
+  animation-duration: 8s; }
 
 /*# sourceMappingURL=main.css.map */
