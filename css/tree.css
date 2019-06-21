@@ -1,0 +1,18 @@
+.tree_rounded {
+  animation: windSkew 6s ease-in-out infinite; }
+
+@keyframes windSkew {
+  20% {
+    transform: none; }
+  40% {
+    transform: translateX(-50px) skewX(15.62deg); }
+  55% {
+    transform: translateX(27px) skewX(-8.43deg); }
+  67% {
+    transform: translateX(-20px) skewX(6.25deg); }
+  77% {
+    transform: translateX(15px) skewX(-4.68deg); }
+  85% {
+    transform: none; } }
+
+/*# sourceMappingURL=tree.css.map */
