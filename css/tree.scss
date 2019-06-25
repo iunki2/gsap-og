@@ -1,99 +1,82 @@
-.tree_rounded {
-  animation: windSkew 6s ease-in-out infinite;
-}
-
-.bush {
-  animation: windSkewSmall 6s ease-in-out infinite;
-}
+$trees-heights: 360, 95, 390;
+$animation-duration: 8s;
+$max-skew: 15deg;
 
 .leaves {
+  animation: falling $animation-duration linear infinite, fading $animation-duration ease-in-out infinite;
   path {
-    opacity: 0;
-    &:nth-child(1) {
-      animation: falling 6s ease-in infinite, fading 6s ease-in infinite;
-    }
-    &:nth-child(2) {
-      animation: falling 6s ease-in infinite, fading 6s ease-in infinite;
-    }
-
-    &:nth-child(3) {
-      animation: falling 6s ease-in infinite, fading 6s ease-in infinite;
-    }
-
-    &:nth-child(4) {
-      animation: falling 6s ease-in infinite, fading 6s ease-in infinite;
-    }
-
-
-    &:nth-child(5) {
-      animation: falling 6s ease-in infinite, fading 6s ease-in infinite;
-
-    }
+    animation: hovers $animation-duration linear infinite;
   }
 }
 
-@keyframes windSkew {
-  20% {
-    transform: none;
+/// Generating keyframe wind-skew for each tree
+@each $height in $trees-heights {
+  .wind-skew-#{$height} {
+    height: #{$height}px;
+    animation: wind-skew-#{$height} $animation-duration ease-in-out infinite;
+    transform-origin: 100% 100%;
   }
-  40% {
-    transform: translateX(-50px) skewX(15.62deg);
-  }
-  55% {
-    transform: translateX(27px) skewX(-8.43deg);
-  }
-  67% {
-    transform: translateX(-20px) skewX(6.25deg);
-  }
-  77% {
-    transform: translateX(15px) skewX(-4.68deg);
-  }
-  85% {
-    transform: none;
-  }
-}
-
-@keyframes windSkewSmall {
-  20% {
-    transform: none;
-  }
-  40% {
-    transform: translateX(-15px) skewX(8.33deg);
-  }
-  55% {
-    transform: translateX(7px) skewX(-8.43deg);
-  }
-  67% {
-    transform: translateX(-5px) skewX(6.25deg);
-  }
-  77% {
-    transform: translateX(5px) skewX(-4.68deg);
-  }
-  85% {
-    transform: none;
+  $hypotenuse: $height / 2 * 1px;
+  @keyframes wind-skew-#{$height} {
+    20% {
+      transform: none;
+    }
+    40% {
+      transform: skewX($max-skew);
+    }
+    55% {
+      transform: skewX(-$max-skew/2);
+    }
+    67% {
+      transform: skewX($max-skew/2.4);
+    }
+    77% {
+      transform: skewX(-$max-skew/3.75);
+    }
+    85% {
+      transform: none;
+    }
   }
 }
 
 @keyframes falling {
   0% {
-    transform: translateY(-76%) translateX(-20%);
+    transform: translateY(-100%);
   }
   90% {
-    transform: translateY(76%) translateX(35%);
+    transform: translateY(50%);
   }
 }
 
 @keyframes fading {
-  52% {
+  0%, 40% {
     opacity: 0;
-  }
-  53% {
-    opacity: 1;
   }
   70% {
     opacity: 1;
   }
-  90% {
+  90%, 100% {
     opacity: 0;
+  }
+}
+
+@keyframes hovers {
+  25% {
+    transform: none;
+  }
+  40% {
+    transform: rotate($max-skew);
+  }
+  55% {
+    transform: rotate(-$max-skew/2);
+  }
+  67% {
+    transform: rotate($max-skew/2);
+  }
+  77% {
+    transform: rotate(-$max-skew/2);
+  }
+  90% {
+    transform: none;
   }
 }
