@@ -58,7 +58,7 @@
     transform: none;
   }
   40% {
-    transform: translateX(-25px) skewX(15.62deg);
+    transform: translateX(-15px) skewX(8.33deg);
   }
   55% {
     transform: translateX(7px) skewX(-8.43deg);
@@ -76,10 +76,10 @@
 
 @keyframes falling {
   0% {
-    transform: translateY(-300px) translateX(-40px);
+    transform: translateY(-76%) translateX(-20%);
   }
   90% {
-    transform: translateY(300px) translateX(70px);
+    transform: translateY(76%) translateX(35%);
   }
 }
 
