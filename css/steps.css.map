@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACE,YAAE;EACA,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,CAAC;EACpB,YAAY,EAAE,GAAG;EACjB,IAAI,EAAE,IAAI",
+"mappings": "AACE,YAAE;EACA,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,CAAC;EACpB,YAAY,EAAE,GAAG;EACjB,IAAI,EAAE,IAAI",
 "sources": ["steps.scss"],
 "names": [],
 "file": "steps.css"
